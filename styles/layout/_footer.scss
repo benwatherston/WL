@@ -1,0 +1,145 @@
+.footer{
+  @include flexbox;
+  @include flex-direction(column);
+  @include container;
+  background: $brand;
+  border-top: 10px solid darken($brand, 5%);
+  color: white;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  @include s{
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(space-between);
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+  &__social{
+    margin-bottom: 2rem;
+    @include s{
+      margin:0;
+      @include order(1);
+    }
+    a{
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include border-radius(50%);
+      @include transition(all 0.3s);
+      box-sizing: border-box;
+      border: 1px solid white;
+      &:hover{
+        @include s{
+          background: white;
+        }
+      }
+    }
+    svg{
+      @include transition(all 0.3s);
+      display: block;
+      fill: white;
+      height: 30px;
+      width: 30px;
+      padding: 10px;
+      @include xs{
+        height: 40px;
+        width: 40px;
+      }
+      @include s{
+        height: 30px;
+        width: 30px;
+      }
+      &:hover{
+        @include s{
+          fill: $brand;
+        }
+      }
+    }
+    ul{
+      @include flexbox;
+      @include justify-content(center);
+      margin: 0;
+      padding: 0;
+      li{
+        list-style-type: none;
+        margin: 0 0.5rem;
+        @include xs{
+          margin: 0 1rem;
+        }
+        @include s{
+          margin: 0 0.5rem;
+        }
+        &:first-child{
+          margin-left: 0;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__info{
+    @include flexbox;
+    @include flex-direction(column-reverse);
+    @include s{
+      @include flex-direction(column);
+    }
+  }
+  &__copyright{
+    text-align: center;
+    @include s{
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+    p{
+      font-family: $font;
+      font-size: 1.25rem;
+      margin: 0;
+      @include xs{
+        font-size: 2rem;
+      }
+    }
+  }
+  &__ben{
+    margin-bottom: 2rem;
+    text-align: center;
+    @include s{
+      margin-bottom: 0rem;
+      text-align: left;
+    }
+    p{
+      font-family: $font;
+      font-size: 1.5rem;
+      margin: 0;
+      @include xs{
+        font-size: 2rem;
+      }
+      a{
+        @include transition(all 0.3s);
+        color: rgba(0,0,0,0.1);
+        display: inline-block;
+        font-family: $font;
+        text-decoration: none;
+        position: relative;
+        &:after{
+          content: "";
+          @include transition(all 0.3s);
+          @include transform(rotate(-4deg));
+          background: rgba(0,0,0,0.1);
+          height: 2px;
+          left: 0;
+          bottom: 0;
+          position: absolute;
+          width: 100%;
+        }
+        &:hover{
+          color: rgba(0,0,0,0.3);
+          &:after{
+            @include transform(rotate(0deg));
+            background: rgba(0,0,0,0.3);
+          }
+        }
+      }
+    }
+  }
+}

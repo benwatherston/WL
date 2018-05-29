@@ -1,0 +1,30 @@
+.header{
+  @include flexbox;
+  @include align-items(center);
+  @include container;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+  @include justify-content(space-between);
+  @include s{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+
+.logo{
+  text-align: center;
+  a{
+    font-family: $font;
+    color: $brand;
+    font-size: 2rem;
+    text-decoration: none;
+    @include s{
+      font-size: 2.25rem;
+    }
+    @include m{
+      font-size: 2.5rem;
+    }
+  }
+}

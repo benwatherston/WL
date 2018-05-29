@@ -1,0 +1,41 @@
+@mixin container{
+  padding-left: 20px;
+  padding-right: 20px;
+  @include s{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include m{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  @include l{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @include xl{
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+@mixin minus-container{
+  margin-left: -20px;
+  margin-right: -20px;
+  @include s{
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  @include m{
+    margin-left: -5%;
+    margin-right: -5%;
+  }
+  @include l{
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+  @include xl{
+    margin-left: -15%;
+    margin-right: -15%;
+  }
+}
