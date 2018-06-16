@@ -27,6 +27,7 @@ get_header(); ?>
 <?php
   query_posts( array(
     'post_type' => 'page',
+    'order' => 'ASC', 
     'tax_query' => array(
         array(
         'taxonomy' => 'post_tag',
@@ -41,14 +42,12 @@ get_header(); ?>
 <div class="panel__wrap">
 
   <?php  if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-
-  <div class="panel__item">
-
-    <?php the_title(); ?>
-
-    <?php the_content(); ?>
-  </div>
-    
+  <a href="<?php echo get_permalink( $post->ID ); ?>" class="panel__item">
+    <div class="panel__img--wrap">
+      <?php echo get_the_post_thumbnail( $post_id, 'medium', array( 'class' => 'panel__img' ) ); ?>
+    </div>
+    <div class="panel__content--wrap"><div class="panel__content"><?php the_title(); ?></div></div>
+  </a>
 <?php endwhile; endif; ?>
 </div>
 

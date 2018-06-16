@@ -4,7 +4,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
   font-family: 'Reenie Beanie', cursive;
   font-weight: 300;
   margin: 0;
@@ -55,4 +60,11 @@ h2{
 
 .screen-reader-text{
   display: none;
+}
+
+.entry-title{
+  margin: 10px 0;
+  @include s{
+    margin: 20px 0;
+  }
 }

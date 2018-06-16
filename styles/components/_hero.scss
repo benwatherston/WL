@@ -1,7 +1,17 @@
 .hero{
   width: 100%;
-  height: 500px;
+  height: 300px;
   overflow: hidden;
+  margin-bottom: 2rem;
+  @include s{
+    height: 350px;
+  }
+  @include m{
+    height: 400px;
+  }
+  @include l{
+    height: 450px;
+  }
   &__image{
     width: 100%;
     height: 100%;

@@ -15,33 +15,45 @@
 ?>
 
 </main>
-		<footer class="footer">
-      <div class="footer__social">
-        <?php
-          wp_nav_menu( array(
-            'theme_location' => 'social',
-            'menu_class'     => 'social-links-menu',
-            'container'      => false,
-            'depth'          => 1,
-            'link_before'    => '<span class="screen-reader-text">',
-            'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) ),
-          ) );
-        ?>
+
+  <div class="instagram__heading--wrap">
+    <div class="instagram__heading">Follow Us!</div>
+  </div>
+
+  <?php
+    if(is_active_sidebar('instagram-feed')){
+      dynamic_sidebar('instagram-feed');
+    }
+  ?>
+  <footer class="footer">
+    <div class="footer__social">
+      <?php
+        wp_nav_menu( array(
+          'theme_location' => 'social',
+          'menu_class'     => 'social-links-menu',
+          'container'      => false,
+          'depth'          => 1,
+          'link_before'    => '<span class="screen-reader-text">',
+          'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) ),
+        ) );
+      ?>
+    </div>
+    <div class="footer__info">
+
+      <div class="footer__copyright">
+        <p>&copy; Copyright Wandering Liverpool <?php echo date('Y'); ?></p>
       </div>
-      <div class="footer__info">
-
-        <div class="footer__copyright">
-          <p>&copy; Copyright Wandering Liverpool <?php echo date('Y'); ?></p>
-        </div>
-        <div class="footer__ben">
-          <p>Website Developed by <a target="_blank" href="https://benwatherston.co.uk">Ben Watherston</a></p>
-        </div>
+      <div class="footer__ben">
+        <p>Website Developed by <a target="_blank" href="https://benwatherston.co.uk">Ben Watherston</a></p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <?php wp_footer(); ?>
+  <?php wp_footer(); ?>
 
-    <div class="overlay"></div>
+  <script src="<?php echo get_bloginfo("template_url") . '/assets/js/main.js'; ?>" defer></script>
+
+  <div class="overlay"></div>
 
 
 </body>

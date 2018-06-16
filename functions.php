@@ -322,8 +322,8 @@ function twentyseventeen_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'twentyseventeen' ),
-		'id'            => 'sidebar-2',
+		'name'          => __( 'Instagram Feed', 'twentyseventeen' ),
+		'id'            => 'instagram-feed',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -400,10 +400,6 @@ function twentyseventeen_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
 
-
-	// Load the html5 shiv.
-	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
-	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
 
 	$twentyseventeen_l10n = array(
@@ -558,3 +554,5 @@ function tags_support_query($wp_query) {
 // tag hooks
 add_action('init', 'tags_support_all');
 add_action('pre_get_posts', 'tags_support_query');
+
+add_filter('wpcf7_autop_or_not', '__return_false');

@@ -10,7 +10,6 @@
 
 ?>
 <nav>
-  <span class="navigation__close">x</span>
 	<?php wp_nav_menu( array(
     'theme_location' => 'top',
     'container' => false

@@ -8,23 +8,43 @@
   width: 100%;
   @include justify-content(space-between);
   @include s{
+    @include flex-wrap(wrap);
     padding-bottom: 20px;
     padding-top: 20px;
+  }
+  &.nav-active{
+    .navigation__close{
+      display: block;
+      @include s{
+        display: none;
+      }
+    }
+    .navigation__open{
+      display: none;
+      @include s{
+        display: none;
+      }
+    }
   }
 }
 
 .logo{
   text-align: center;
+  margin-right: auto;
+  @include s{
+    @include flex(1 1 100%);
+    margin-bottom: 1rem;
+  }
   a{
     font-family: $font;
     color: $brand;
     font-size: 2rem;
     text-decoration: none;
     @include s{
-      font-size: 2.25rem;
+      font-size: 3.5rem;
     }
     @include m{
-      font-size: 2.5rem;
+      font-size: 4.5rem;
     }
   }
 }

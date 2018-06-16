@@ -17,7 +17,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -35,8 +34,9 @@
     <div class="logo">
       <a href="/">Wandering Liverpool</a>
     </div>
-    
+
     <span class="navigation__open">|||</span>
+    <span class="navigation__close">x</span>
 
     <?php if ( has_nav_menu( 'top' ) ) : ?>
     <div class="main__navigation">
@@ -63,9 +63,6 @@
 		echo '</div>';
 	endif;
 
-  
-
 	?>
 
 	<main>
-		
