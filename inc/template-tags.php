@@ -33,10 +33,8 @@ if ( ! function_exists( 'twentyseventeen_time_link' ) ) :
  * Gets a nicely formatted string for the published date.
  */
 function twentyseventeen_time_link() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+	$time_string = '<time class="h4 entry-date published updated" datetime="%1$s">%2$s</time>';
+
 
 	$time_string = sprintf( $time_string,
 		get_the_date( DATE_W3C ),
@@ -48,8 +46,7 @@ function twentyseventeen_time_link() {
 	// Wrap the time string in a link, and preface it with 'Posted on'.
 	return sprintf(
 		/* translators: %s: post date */
-		__( '<span class="screen-reader-text">Posted on</span> %s', 'twentyseventeen' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		__( '<span class="screen-reader-text">Posted on</span> %s', 'twentyseventeen' ), $time_string
 	);
 }
 endif;
@@ -62,7 +59,7 @@ if ( ! function_exists( 'twentyseventeen_entry_footer' ) ) :
 function twentyseventeen_entry_footer() {
 
 	/* translators: used between list items, there is a space after the comma */
-	$separate_meta = __( ', ', 'twentyseventeen' );
+	$separate_meta = __( '', 'twentyseventeen' );
 
 	// Get Categories for posts.
 	$categories_list = get_the_category_list( $separate_meta );
@@ -83,7 +80,7 @@ function twentyseventeen_entry_footer() {
 				
 
 						if ( $tags_list && ! is_wp_error( $tags_list ) ) {
-							echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>';
+							echo '<span class="tags-links">' . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>';
 						}
 
 					echo '</span>';

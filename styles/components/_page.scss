@@ -1,0 +1,60 @@
+.page{
+  &__overview{
+    width: 80%;
+    margin: 0 auto 3rem;
+    text-align: center;
+    display: block;
+    @include s{
+      width: 75%;
+      margin: 0 auto 3.5rem;
+    }
+    @include m{
+      width: 70%;
+    }
+    @include l{
+      width: 65%;
+      margin: 0 auto 4rem;
+    }
+    @include xl{
+      width: 60%;
+      max-width: 800px;
+    }
+    p{
+      color: lighten($dark, 10%);
+      font-size: 1.1rem;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      @include xs{
+        font-size: 1.2rem;
+      }
+      @include s{
+        font-size: 1.25rem;
+      }
+      @include m{
+        font-size: 1.3rem;
+        margin-bottom: 1.25rem;
+      }
+      @include l{
+        font-size: 1.3rem;
+      }
+      @include xl{
+        font-size: 1.4rem;
+      }
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+}
+
+.entry{
+  &-header{
+    margin-bottom: 1rem;
+  }
+  &-title{
+    margin: 0 0 0.5rem;
+    text-align: center;
+    line-height: 1;
+  }
+}
+

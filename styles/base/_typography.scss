@@ -1,7 +1,7 @@
 *{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -9,21 +9,36 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6{
   font-family: 'Reenie Beanie', cursive;
   font-weight: 300;
   margin: 0;
   color: $brand;
 }
 
+p{
+  margin: 0 0 0.5rem;
+  color: $dark;
+  @include s{
+    margin: 0 0 1rem;
+  }
+}
+
 a{
   outline: none;
 }
 
-h1{
-  font-size: 2.75rem;
+h1,
+.h1{
+  font-size: 3.5rem;
   @include xs{
-    font-size: 3.5rem;
+    font-size: 3.75rem;
   }
   @include s{
     font-size: 4rem;
@@ -39,7 +54,8 @@ h1{
   }
 }
 
-h2{
+h2,
+.h2{
   font-size: 2.5rem;
   @include xs{
     font-size: 3rem;
@@ -58,13 +74,46 @@ h2{
   }
 }
 
-.screen-reader-text{
-  display: none;
+h3,
+.h3{
+  font-size: 2.25rem;
+  @include xs{
+    font-size: 2.5rem;
+  }
+  @include s{
+    font-size: 3rem;
+  }
+  @include m{
+    font-size: 3.5rem;
+  }
+  @include l{
+    font-size: 4rem;
+  }
+  @include xl{
+    font-size: 4.25rem;
+  }
 }
 
-.entry-title{
-  margin: 10px 0;
-  @include s{
-    margin: 20px 0;
+h4,
+.h4{
+  font-size: 2rem;
+  @include xs{
+    font-size: 2.25rem;
   }
+  @include s{
+    font-size: 2.5rem;
+  }
+  @include m{
+    font-size: 2.75rem;
+  }
+  @include l{
+    font-size: 3rem;
+  }
+  @include xl{
+    font-size: 3.5rem;
+  }
+}
+
+.screen-reader-text{
+  display: none;
 }

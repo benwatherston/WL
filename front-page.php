@@ -32,7 +32,7 @@ get_header(); ?>
         array(
         'taxonomy' => 'post_tag',
         'field' => 'term_id',
-        'terms' => 4
+        'terms' => 2
         )
       )
     )

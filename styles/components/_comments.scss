@@ -1,0 +1,18 @@
+.comments{
+  &__wrapper{
+    @include minus-container;
+  }
+  &-area{
+    @include container;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    width: calc(100% - 40px);
+    margin: 0 auto 2rem;
+
+    .form-submit{
+      margin: 1rem 0 0;
+    }
+  }
+}
+
