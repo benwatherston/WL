@@ -28,12 +28,12 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 			$comments_number = get_comments_number();
 			if ( '1' === $comments_number ) {
 				/* translators: %s: post title */
-				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'twentyseventeen' ), get_the_title() );
+				printf( _x( '1 comment', 'comments title', 'twentyseventeen' ), get_the_title() );
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */
@@ -49,9 +49,9 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2>
+		</h3>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 				wp_list_comments( array(
 					'avatar_size' => 100,
@@ -60,7 +60,7 @@ if ( post_password_required() ) {
 					'reply_text'  => twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
 				) );
 			?>
-		</ol>
+		</ul>
 
 		<?php the_comments_pagination( array(
 			'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',

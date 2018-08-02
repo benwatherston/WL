@@ -19,7 +19,7 @@ $args = array(
   'post_status' => 'publish',
   'paged' => $paged,
 	'category_name' => 'Drink',
-	'posts_per_page' => 9,
+	'posts_per_page' => 10,
 );
 
 
@@ -30,8 +30,6 @@ $query = new WP_Query( $args );
 
 // The Loop
 if ( $query->have_posts() ) {
-
-    
 
     while ( $query->have_posts() ) {
         $query->the_post();

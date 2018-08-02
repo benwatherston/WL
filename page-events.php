@@ -19,7 +19,7 @@ $args = array(
   'post_status' => 'publish',
   'paged' => $paged,
 	'category_name' => 'Event',
-	'posts_per_page' => 9,
+	'posts_per_page' => 10,
 );
 
 

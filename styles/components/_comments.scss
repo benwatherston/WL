@@ -1,18 +1,66 @@
 .comments{
   &__wrapper{
-    @include minus-container;
   }
   &-area{
-    @include container;
     border-radius: 10px;
     border: 1px solid rgba(0,0,0,0.1);
     box-sizing: border-box;
-    width: calc(100% - 40px);
+    padding: 10px;
+    width: 100%;
     margin: 0 auto 2rem;
-
+    @include s{
+      padding: 20px;
+    }
+    @include l{
+      max-width: 1000px;
+    }
     .form-submit{
       margin: 1rem 0 0;
     }
   }
 }
 
+.comment{
+  &-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li{
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .says{
+      display: none;
+    }
+  }
+}
+
+.reply{
+  @include flexbox;
+  @include justify-content(flex-end);
+  a{
+    border: 2px solid $brand;
+    color: $brand;
+    text-decoration: none;
+    border-radius: 100px;
+    padding: 6px 12px;
+    position: relative;
+    line-height: 1;
+    display: inline-block;
+    svg{
+      display: none;
+    }
+  }
+}
+
+#commentform{
+  @include flexbox;
+  @include flex-direction(column);
+  .form-submit{
+    @include order(2);
+  }
+}
+
+.comment-form-comment{
+}
