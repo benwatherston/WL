@@ -1,18 +1,26 @@
 .comments{
   &__wrapper{
+    @include minus-container;
+    color: $dark;
+    a{
+      color: $brand;
+    }
   }
   &-area{
-    border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.1);
+    background: #f9f9f9;
     box-sizing: border-box;
     padding: 10px;
     width: 100%;
     margin: 0 auto 2rem;
+    max-width: 1000px;
     @include s{
       padding: 20px;
     }
+    @include m{
+      border-radius: 10px;
+    }
     @include l{
-      max-width: 1000px;
+      padding: 30px;
     }
     .form-submit{
       margin: 1rem 0 0;
@@ -25,14 +33,72 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     li{
       margin-bottom: 1rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid rgba(0,0,0,0.1);
+      &:last-child{
+        border: none;
+        padding-bottom: 0;
+      }
+    }
+    .children{
+      border-left: 3px solid rgba(0,0,0,0.1);
+      border-bottom: 3px solid rgba(0,0,0,0.1);
+      background: rgba(0,0,0,0.025);
+      padding: 8px 20px;
+      @include border-radius(10px);
+      @include s{
+        padding: 10px 25px;
+        border-left: 5px solid rgba(0,0,0,0.1);
+        border-bottom: 5px solid rgba(0,0,0,0.1);
+      }
     }
     .says{
       display: none;
     }
+  }
+  &-body{
+    margin-bottom: 1rem;
+    &:last-child{
+      margin: 0;
+    }
+  }
+  &-meta{
+    @include flexbox;
+    @include flex-direction(column);
+    @include s{
+      @include flex-direction(row);
+      @include justify-content(space-between);
+    }
+  }
+  &-metadata{
+    a, time{
+      text-decoration: none;
+      font-weight: 100;
+      color: $brand;
+    }
+  }
+  &-reply{
+    &-title{
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+      margin-bottom: 1rem;
+      @include s{
+        @include flex-direction(row);
+        @include justify-content(space-between);
+        margin-bottom: 0;
+      }
+      a{
+        @include button;
+        font-size: 1rem;
+      }
+    }
+  }
+  &-respond{
+    margin-bottom: 1rem;
   }
 }
 
@@ -40,14 +106,7 @@
   @include flexbox;
   @include justify-content(flex-end);
   a{
-    border: 2px solid $brand;
-    color: $brand;
-    text-decoration: none;
-    border-radius: 100px;
-    padding: 6px 12px;
-    position: relative;
-    line-height: 1;
-    display: inline-block;
+    @include button;
     svg{
       display: none;
     }
@@ -59,8 +118,17 @@
   @include flex-direction(column);
   .form-submit{
     @include order(2);
+    cursor: pointer;
   }
 }
 
 .comment-form-comment{
+}
+
+.nav{
+  &-previous, &-next{
+    a{
+      @include button;
+    }
+  }
 }

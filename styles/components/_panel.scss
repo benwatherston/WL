@@ -7,7 +7,21 @@
       @include justify-content(center);
     }
     &.home__page{
+      .panel__item{
+        &:first-child{
+          @include flex(1 1 100%);
+          min-height: 300px;
+          position: relative;
+          margin-bottom: 2rem;
+          @include s{
+            @include flex(1 1 300px);
+            margin: 1rem;
+          }
+        }
+      }
       .panel__content{
+        @include transition(all 0.3s);
+        border-bottom: 5px solid $brand;
         font-size: 3rem;
         @include s{
           font-size: 3.25rem;
@@ -20,6 +34,15 @@
         }
         @include xl{
           font-size: 4rem;
+        }
+        &--wrap{
+          @include s{
+            &:hover{
+              .panel__content{
+                border-color: darken($brand, 10%);
+              }
+            }
+          }
         }
       }
     }
@@ -80,9 +103,12 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.3);
-      &:hover{
-        background: rgba(0,0,0,0.15);
+      background: rgba(0,0,0,0.4);
+      @include s{
+        background: rgba(0,0,0,0.3);
+        &:hover{
+          background: rgba($brand, 0.8);
+        }
       }
     }
   }

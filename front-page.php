@@ -32,19 +32,19 @@ get_header(); ?>
         array(
         'taxonomy' => 'post_tag',
         'field' => 'term_id',
-        'terms' => 2
+        'terms' => 4
         )
       )
     )
   );
 ?>
 
-<div class="panel__wrap">
+<div class="panel__wrap home__page">
 
   <?php  if ( have_posts() ) : while ( have_posts() ) : the_post();?>
   <a href="<?php echo get_permalink( $post->ID ); ?>" class="panel__item">
     <div class="panel__img--wrap">
-      <?php echo get_the_post_thumbnail( $post_id, 'medium', array( 'class' => 'panel__img' ) ); ?>
+      <?php echo get_the_post_thumbnail( $post->ID, 'medium', array( 'class' => 'panel__img' ) ); ?>
     </div>
     <div class="panel__content--wrap"><div class="panel__content"><?php the_title(); ?></div></div>
   </a>

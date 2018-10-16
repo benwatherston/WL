@@ -3,10 +3,11 @@
   padding: 0;
   width: 100%;
   ul{
+    @include flexbox;
     margin: 0;
     padding: 0;
     width: 100%;
-    @include flexbox;
+    list-style-type: none;
     li{
       a{
         width: 100%;
