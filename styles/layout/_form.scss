@@ -28,11 +28,12 @@ select{
 
 input[type="submit"]{
   @include appearance(none);
-  background: $brand;
+  background: rgba($brand, 0.7);
   border: none;
-  border-radius: 3px;
+  border-radius: 100px;
   box-sizing: border-box;
   color: white;
+  cursor: pointer;
   display: block;
   font-family: $font;
   outline: none;
@@ -41,6 +42,10 @@ input[type="submit"]{
   height: 42px;
   padding: 0;
   width: 100%;
+  @include transition(background 0.3s);
+  &:hover{
+    background: $brand;
+  }
 }
 textarea{
   min-height: 104px;

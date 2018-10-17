@@ -1,0 +1,36 @@
+.widget_search{
+  margin: 1rem 0;
+  @include s{
+    margin: 2rem 0;
+  }
+}
+
+.search-form{
+  @include flexbox;
+  @include flex-direction(column);
+  @include s{
+    @include flex-direction(row);
+  }
+  .search-field{
+    margin-bottom: 1rem;
+    @include flex(1 1 100%);
+    @include s{
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
+  }
+  button{
+    background: $brand;
+    color: white;
+    height: 42px;
+    border: none;
+    @include border-radius(3px);
+  }
+  svg{
+    height: 28px;
+    width: 100%;
+    *{
+      fill: white;
+    }
+  }
+}
